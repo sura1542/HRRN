@@ -1,5 +1,5 @@
 let hrrn = []
-const c = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A2', 'B2', 'C2', 'D2', 'E2', 'F2', 'G2']
+const nameProcess = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A2', 'B2', 'C2', 'D2', 'E2', 'F2', 'G2']
 const arrival = [], burst = [];
 let sum_bt = 0, avg_tt = 0, avg_wt = 0, i = 0, n = 0;
 
@@ -94,34 +94,35 @@ const getDataHRRN= ()=>{
    for (let i = 0; i < n; i++) {
 
       temp = {
-         name: c[i],
+         name: nameProcess[i],
          at: arrival[i],
          bt: burst[i],
          ct: 0,
          wt: 0,
          tt: 0,
-         completed: 0
+         check: 0
       }
    
       hrrn.push(temp);
    
 
-      sum_bt += burst[i];
    }
+   hrrn.sort((a, b) => {
+      return a.at - b.at
+   });
 
    let time = 0;
    console.log(time);
    let hrr = -9999;
    let x = 0, cur =0;
-   console.log(sum_bt);
 for(let A = 0; A < n; A++){
       
       for(let i = 0; i < n; i++){
          console.log(15);
          
-         if(hrrn[i].at <= time && hrrn[i].completed != 1){
+         if(hrrn[i].at <= time && hrrn[i].check != 1){
             
-           
+           console.log(hrrn[i].at)
             x = ((time + hrrn[i].at+hrrn[i].bt) / hrrn[i].bt);
 
             if(hrr < x){
@@ -144,7 +145,7 @@ for(let A = 0; A < n; A++){
 
          hrrn[cur].wt = hrrn[cur].tt -  hrrn[cur].bt;
          time += hrrn[cur].ct;
-         hrrn[cur].completed = 1;
+         hrrn[cur].check = 1;
          hrr = 0;
          }
          else{
@@ -160,7 +161,7 @@ for(let A = 0; A < n; A++){
          console.log(time);
          hrr = 0;
          
-         hrrn[cur].completed = 1;
+         hrrn[cur].check = 1;
          }
    }
 
@@ -174,98 +175,5 @@ for(let A = 0; A < n; A++){
 
    console.log(avg_wt);
    console.log(avg_tt);
-   createTable(n);
-}
-
-const getDataHRRN_RR=(quantum)=>{
-
-   console.log(quantum);
-
-   clearTable()
-
-   const arrivalString = document.getElementById("ArrivalTimes").value;
-   const BurstString = document.getElementById("BurstTimes").value;
-
-   const arrival = arrivalString.split(' ').map(function(item) {
-      return parseInt(item, 10);
-   });
-
-   const burst = BurstString.split(' ').map(function(item) {
-      return parseInt(item, 10);
-   });
-
-   document.getElementById("ArrivalTimes").value = "";
-   document.getElementById("BurstTimes").value = "";
-
-   const n = burst.reduce((sum,number) => {
-      return number++;
-    }, 0)
-
-   for (let i = 0; i < n; i++) {
-
-      temp = {
-         name: c[i],
-         at: arrival[i],
-         bt: burst[i],
-         ct: 0,
-         wt: 0,
-         tt: 0,
-         count: 0,
-         completed: 0
-      }
-      hrrn.push(temp);
-      
-      sum_bt += burst[i];
-   }
-
-   console.log(hrrn);
-
-   hrrn.sort((a, b) => {
-      return a.at - b.at
-   });
-
-   let time = hrrn[0].at;
-
-   let hrr = -9999;
-   let x = 0, cur =0;
-
-
-   while(time < sum_bt + hrrn[0].at){
-
-      for(let i = 0; i < n; i++){
-
-         if(hrrn[i].at <= time && hrrn[i].completed != 1){
-
-            x = ((hrrn[i].bt + (time - hrrn[i].at)) / hrrn[i].bt);
-
-            if(hrr < x){
-
-               hrr = x;
-
-               cur = i;
-            }
-         }
-      }
-
-      count = 0;
-      while(count < parseInt(quantum)){
-         time += 1
-
-         hrrn[cur].count += 1;
-
-         count += 1;
-
-         hrrn[cur].wt = time - hrrn[cur].at - hrrn[cur].bt;
-
-         hrrn[cur].tt = time - hrrn[cur].at;
-
-         hrrn[cur].ct = hrrn[cur].tt + hrrn[cur].at ;
-
-         if(hrrn[cur].count == hrrn[cur].bt){
-            hrrn[cur].completed = 1;
-         }
-      }
-   }
- 
    createTable(n);
 }
