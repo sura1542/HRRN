@@ -4,13 +4,11 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>HRRM</title>
+   <title>HRRN</title>
 
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="hrrn.css">
 
-   <link rel="stylesheet" href="hrrm.css">
-
-   <script src="hrrm.js" defer></script>
+   <script src="hrrn.js" defer></script>
    
 </head>
 <body>
@@ -27,14 +25,14 @@
 
             <select name="" id="select" class="input__form__input" onchange="checkAlgo()">
                <option value="HRRN">HRRN</option>
-               <option value="HRRN_RR">HRRN RR</option>
+               <option value="HRRN_RR">HRRN QT</option>
             </select>
             
             <label>Arrival Times</label>
-            <input type="text" id = "ArrivalTimes" class="input__form__input" placeholder="e.g. 0 2 4 6">
+            <input type="text" id = "ArrivalTimes" class="input__form__input" placeholder="e.g. 1 2 3 4">
    
             <label>Burst Times</label>
-            <input type="text" id="BurstTimes" class="input__form__input" placeholder="e.g. 2 4 6 8">
+            <input type="text" id="BurstTimes" class="input__form__input" placeholder="e.g. 1 2 3 4">
             
          </form>
 
@@ -63,26 +61,15 @@
                      document.querySelector('form').appendChild(input);
                   }
                }
-               else{
-                  console.log("Emtpy");
-               }
             }
 
             function button(){
-                  // check case 1 
 
                   if(document.getElementById('select').value == "HRRN"){
                      console.log("HRRN");
                      return getDataHRRN();
                   }
-                  else if(document.getElementById('select').value == "HRRN_RR"){
-                     console.log("HRRN_RR");
-                     console.log(document.getElementById('qt').value)
-                     return getDataHRRN_RR(document.getElementById('qt').value);
-                  }
-                  else{
-                     console.log("Emtpy");
-                  }
+                 
                }
          
          </script>
@@ -97,7 +84,6 @@
          
          <table id = 'table' class="table" style="display: none;">
 
-            <!-- table head -->
             <thead>
                <tr>
                   <th>Process</th>
@@ -109,7 +95,6 @@
                </tr>
             </thead>
 
-            <!-- table body -->
             <tbody id="tbody">
                <tr class="tr">
                </tr>
