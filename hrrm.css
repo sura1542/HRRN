@@ -5,7 +5,7 @@
 }
 
 body{
-   font-family: 'Roboto', sans-serif;
+   
 }
 
 main{
@@ -21,17 +21,19 @@ h1{
 
 .input{
 
-   border: 2px;
+  
+   border: 1px;
 
    display: flex;
    flex-direction: column;
-   width: 300px;
-   height: 500px;
+   width: 200px;
+   height: 450px;
 
-   margin: 0 8rem ;
-   padding: 2rem;
-   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-   border-radius: 25px;
+   margin: 0 6rem ;
+   padding: 1rem;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+   border-radius: 15px;
+	background-color: #CCCCFF;
 
 
 }
@@ -43,8 +45,8 @@ h1{
 
 .input__form__input{
    height: 2rem;
-   border-radius: 5px;
-   border: 1px solid gray;
+   border-radius: 21px;
+   border: 1px solid black;
    margin: 1rem 0rem;
    padding: 0rem 1rem;
 }
@@ -53,36 +55,33 @@ h1{
    width: 50%;
    height: 500px;
    padding: 2rem;
-   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-   border-radius: 25px;
+   
+   border-radius: 15px;
+	
 }
 
 .input__form__button{
-   background-color: rgb(105, 148, 242);
+     background-color: rgb(64, 224, 208);
    color: white;
-   width: 5rem;
+   width: 10rem;
    height: 2rem;
+   
 }
 
 .table{
-   /* display: none; */
 }
-
-
-
 .table td, .table th {
    border: 1px solid #ddd;
    padding: 8px;
+   text-align: center;
+	
  }
 
- .table tr:nth-child(even){background-color: #f2f2f2;}
-
- .table tr:hover {background-color: #ddd;}
-
+ .table tr:nth-child(even){background-color: white;}
  .table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+   padding-top: 15px;
+  padding-bottom: 15px;
   text-align: left;
-  background-color: #04AA6D;
-  color: white;
+  background-color: deepskyblue;
+  color: black;
 }
