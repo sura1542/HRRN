@@ -1,0 +1,88 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body{
+   font-family: 'Roboto', sans-serif;
+}
+
+main{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   margin: 3rem;
+}
+
+h1{
+   margin: 10px 0px;
+}
+
+.input{
+
+   border: 2px;
+
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+   height: 500px;
+
+   margin: 0 8rem ;
+   padding: 2rem;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+   border-radius: 25px;
+
+
+}
+
+.input__form{
+   display: flex;
+   flex-direction: column;
+}
+
+.input__form__input{
+   height: 2rem;
+   border-radius: 5px;
+   border: 1px solid gray;
+   margin: 1rem 0rem;
+   padding: 0rem 1rem;
+}
+
+.output{
+   width: 50%;
+   height: 500px;
+   padding: 2rem;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+   border-radius: 25px;
+}
+
+.input__form__button{
+   background-color: rgb(105, 148, 242);
+   color: white;
+   width: 5rem;
+   height: 2rem;
+}
+
+.table{
+   /* display: none; */
+}
+
+
+
+.table td, .table th {
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
+
+ .table tr:nth-child(even){background-color: #f2f2f2;}
+
+ .table tr:hover {background-color: #ddd;}
+
+ .table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
